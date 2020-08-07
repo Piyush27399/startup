@@ -1,0 +1,89 @@
+/* Css For whole Website */
+
+.footer
+{
+    background-color:#696969;
+}
+.footer-heading
+{
+    font-size: 18px;
+    font-weight:bold;
+    color:white;
+    margin-bottom:30px;
+}
+.back{
+    background-color:#7c00d2;
+}
+.back1{
+    background-color:#1e1f32;
+}
+.back2{
+    background-color:#181928;
+}                    
+.footer-text, .fa, .text
+{
+    color:white;
+}              
+.fa-facebook, .fa-linkedin, .fa-instagram, .fa-twitter
+{
+    margin-left:20px;
+}    
+.buttonWhite
+{
+    border-radius: 25px;              
+    background-color: transparent;
+    font-weight: bold;
+    border-color: white;          
+    color:white;
+    padding:10px 30px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    margin: 10px;
+}      
+.buttonWhite:hover
+{
+    color:black;
+    background-color: white;
+    opacity: 1
+}
+.buttonBlack
+{
+    border-radius: 25px;              
+    background-color: transparent;
+    font-weight: bold;
+    border-color: black;
+    color:black;
+    padding:10px 30px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    margin: 10px;
+}      
+.buttonBlack:hover
+{
+    color:white;
+    background-color: black;
+    opacity: 1
+}
+
+.text{              
+    padding: 20px;                   
+}
+.heading
+{
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+@font-face {
+    font-family: headingFont;
+    src: url("../fonts/KaushanScript-Regular.ttf");
+}
+
+.headFont
+{
+    font-family: headingFont;
+}    
+nav .navbar-nav li a{
+    color: white !important;
+}
