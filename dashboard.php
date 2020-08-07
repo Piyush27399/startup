@@ -102,15 +102,7 @@
             var list = [];
             for (var i = 18; i <= 55; i++) {
                 list.push(i);
-            }            
-
-                var sel = document.getElementById('ageList');
-                for(var i = 0; i < list.length; i++) {
-                var opt = document.createElement('option');
-                opt.innerHTML = list[i];
-                opt.value = list[i];
-                sel.appendChild(opt);
-            }
+            }                            
 
             var sel = document.getElementById('ageList');
             for(var i = 0; i < list.length; i++) {
@@ -125,7 +117,7 @@
                 listdob.push(i);
             }            
 
-            var seldob = document.getElementById('dob');
+            var seldob = document.getElementById('dobList');
             for(var i = 0; i < listdob.length; i++) {
                 var optdob = document.createElement('option');
                 optdob.innerHTML = listdob[i];
@@ -143,55 +135,39 @@
         <?php
           include("includes/insideNav.php");
         ?>
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Alert</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        You are Not Subscribed to any of the Membership Plan. Buy a Membership Plan to View this profile<br/>
-      </div>
-      <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <a href="mships.php" class="btn btn-success">Buy Memberships</a>
-      </div>
-    </div>
-  </div>
-</div>
 
-    <div class="container-fluid" style='padding:20px;'>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                        <div class="card-header">
-                            Search Filters                            
-                        </div>
-                        <div class="card-body">
-                        <form >
+<!-- Filters Modal -->
+<div class="modal fade" id="filters" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Search Filters</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+        <div class="modal-body">                    
+                        <form>
                             <div class="row">
-                                <div class="col-sm-2">
+                                <div class="col-sm-6">
                                     <div class="form-group">                                        
                                         <input type="text" class="form-control" id="fname" placeholder="First Name" name="fname" value='<?php echo $fname;?>'>
                                     </div>
                                 </div>
-                                <div class="col-sm-2">
+                                <div class="col-sm-6">
                                     <div class="form-group">                                    
                                         <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" value='<?php echo $lname;?>'>
                                     </div>
                                 </div>
-                                <div class="col-sm-2">
+                                <div class="col-sm-6">
                                     <div class="form-group">
                                         <select class="form-control" name="age" id="ageList">
                                             <option default>Select Age</option>                                            
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-sm-2">
+                                <div class="col-sm-6">
                                     <div class="form-group">
                                         <select class="form-control" name="gender" id="genderList">
                                             <option default>Select Gender</option>
@@ -201,7 +177,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-sm-2">
+                                <div class="col-sm-6">
                                     <div class="form-group">
                                         <select class="form-control" name="height" id="heightList">
                                             <option default>Select Height</option>
@@ -215,7 +191,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-sm-2">     
+                                <div class="col-sm-6">     
                                 <div class="form-group">
                                     <select class="form-control" name="maritalStatus" id="msList">
                                         <option default>Marital Status</option>
@@ -224,14 +200,14 @@
                                     </select>
                                     </div>
                                 </div>                                
-                                <div class="col-sm-2">
+                                <div class="col-sm-6">
                                     <div class="form-group">
                                         <select class="form-control" name="dob" id="dobList">
                                             <option default>Select Birth Year</option>
                                         </select>
                                     </div>
                                 </div>                                                                
-                                <div class="col-sm-3">
+                                <div class="col-sm-6">
                                     <div class="form-group">
                                         <select class="form-control" name="state" id="stateList">                     
                                             <option default>Select State</option>               
@@ -273,19 +249,50 @@
                                             <option value="West Bengal">West Bengal</option>
                                         </select>                                                                
                                     </div>
-                                </div>
-                                <div class="col-sm-2">
-                                    <div class="form-group">
-                                        <button type="submit" class="buttonBlack" style='margin:0px;margin-top:3px;padding-left:10px;
-                                        padding-right:10px;padding-bottom:1px;padding-top:1px;'>Search</button>
-                                    </div>
-                                </div>                        
-                            </div>
-                            </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>                
+                                </div>                                                        
+                            </div>                         
+
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>        
+        <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+<!-- Filters Modal -->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Alert</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        You are Not Subscribed to any of the Membership Plan. Buy a Membership Plan to View this profile<br/>
+      </div>
+      <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <a href="mships.php" class="btn btn-success">Buy Memberships</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container-fluid" style='padding:20px;'>
+        <div class="row">
+            <div class="col-sm-10"></div>
+            <div class="col-sm-2">
+                <button class="btn btn-success" data-toggle='modal' data-target="#filters">
+                <i class="fa fa-search" aria-hidden="true"></i> Search Filters</button>                                
             </div>
         </div>
     </div> 

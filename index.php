@@ -69,12 +69,37 @@
           include("includes/outsideNav.php");
         ?>
                 
+<!-- Modal -->
+<div class="modal fade" id="agreePop" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Notification</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        दंडवत प्रणाम.... यह वेबसाईटस सिर्फ महानुभाव पंथीय भोपे  समाज के लिए है... 🙏🏻🙏🏻🙏🏻<br/><br/>
+        Dandwat Pranam.... This website is only for Mahanubhav Pantiy Bhope Pujari Community... 🙏🏻🙏🏻🙏🏻<br/><br/>
+        दंडवत प्रणाम.... ही वेबसाइट फक्त महानुभाव पंथीय भोपे पुजारी समाजासाठी आहे...🙏🏻🙏🏻🙏🏻
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" onclick="btnClicked()" class="btn btn-success">Agree</button>        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
           <div style='background-image:url("images/biel-morro-kcKiBcDTJt4-unsplash.jpg");width:100%;height:100%'>                      
             <center>
               <img class="img-fluid" src="images/Jai-Krishni-Pantha-started-by-Sarvadnya-Shri-Chakradhar-Swami-in-1267-Five-incarnations-of-God-Namo-Panch-Krishna-Avatar-DandvatPranam.jpg"
                style='padding-top:150px;padding-left: 10px;padding-right: 10px;'>
               <h2 class="text headFont" style='padding-top:15px;'>Matrimony is the union of meanness and martyrdom.</h2>
-              <button class="buttonWhite" onclick="btnClicked()">Login</button>
+              <button class="buttonWhite" data-toggle="modal" data-target="#agreePop">Login</button>              
             </center>
           </div>          
 

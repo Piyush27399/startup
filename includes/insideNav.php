@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg sticky-top  navbar-dark back1">
-<a class="navbar-brand" >
+<a class="navbar-brand" href="dashboard.php">
     <img src="images/logo.png" width="50" height="50">
 </a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

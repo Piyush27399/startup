@@ -30,7 +30,7 @@
         {
             $_SESSION['username']=$mno;
             include("includes/getUserID.php");
-            header("location:dashboard.php");
+            header("location:edit_profile.php");
         }
         else
             echo "<script>alert('Registration Failed');</script>";
@@ -139,9 +139,14 @@
                                 </div>
                             </div>
                             <div class="col-sm-12">
+                                <div class="form-group">                      
+                                    <input type="checkbox" required> I agree to terms and Conditions
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
                                 <div id="errorst" style="color:red;text-align:center;">
                                 </div>
-                            </div>                            
+                            </div>                                                        
                             <div class="col-sm-12">
                                 <button type="submit" name="submit" class="buttonBlack">Signup</button>                      
                                 <p style='font-size: 15px;'><a href="login.php">Already Registered! Login Here</a></p>
