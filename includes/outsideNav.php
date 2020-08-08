@@ -11,13 +11,13 @@
         <a class="nav-link"  href="index.php">Home <span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="http://localhost/startup/index.php#features">Features</a>
+        <a class="nav-link" href="#features">Features</a>
     </li>                
     <li class="nav-item">
-        <a class="nav-link" href="http://localhost/startup/index.php#contact">Contact Us</a>
+        <a class="nav-link" href="#contact">Contact Us</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="http://localhost/startup/index.php#about">About</a>
+        <a class="nav-link" href="#about">About</a>
         </li>                
     </ul>
 </div>

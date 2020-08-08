@@ -44,7 +44,7 @@
         <script type="text/javascript">
           function btnClicked()
           {            
-            location.href='https://trgcool.000webhostapp.com/startup/login.php';
+            location.href='https://shreeswayamwar.in/startup/login.php';
           }          
         </script>
 
