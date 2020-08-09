@@ -103,8 +103,35 @@
           </div>          
 
           <div class="heading" id="story">
-              <h1 class="headFont">Our story</h1>
+              <h1 class="headFont">Wonderful Tribute</h1><br/>
 
+          <h5><q>मला चांगले संस्कार आणि आयुष्य दिल्याबद्दल ही वेबसाइट माझ्या आजी आजोबांना लहान समर्पित आहे</q>
+            <br/>-प्रसाद चोरमारे
+          </h5><br/>
+              <div class="container" style='margin-top: 30px;'>
+              <div class="row">
+                <div class="col-sm-2"></div>                
+                <div class="col-sm-4">                      
+                    <div class="card">
+                      <img class="card-img-top" src="images/dadaji.jpg" width="150" height="350">
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          श्री. प्रभाकर कृष्णराव चोरमारे</h5>
+                        <p class="card-text"></p>                        
+                      </div>
+                    </div>                                        
+                  </div>  
+                  <div class="col-sm-4">                                          
+                    <div class="card">
+                      <img class="card-img-top" src="images/dadiji.jpg" width="150" height="350">                      
+                      <div class="card-body">
+                        <h5 class="card-title">स्व. बाळाबाई प्रभाकर चोरमारे</h5>
+                        <p class="card-text"></p>                        
+                      </div>
+                    </div>                    
+                  </div>                                       
+              </div>                 
+            </div>           
           </div>
 
           <div class="heading" id="features">
@@ -172,7 +199,7 @@
                     </center>
                   </div>
                 </div>
-                </div>
+              </div>
               </div>              
             </div>
 
@@ -197,7 +224,27 @@
 
             <h1 class="headFont heading" id="about">About Us</h1>
             <div class="container">
-              <div class="row">                
+              <div class="row">      
+
+              
+              <div class="col-sm-4"></div>
+              <div class="col-sm-4">
+                <div class="card text-white bg-dark mb-3" > 
+                  <div class="card-body" style='padding:0px;'>                    
+                    <img src="images/prasad.JPG" alt="Avatar" style="width:100%">
+                    <p class="card-text" style='margin-top: 30px;' align="center">                                                
+                          Prasad Digambar Chormare</br>
+                          B.E. CSE</br>
+                          8788126366</br>
+                          Buldhana Maharashtra, 443001
+                      </br>
+
+                    </p>
+                  </br>                    
+                  </div>
+                </div>
+              </div>
+                            
               </div>
             </div>
 
