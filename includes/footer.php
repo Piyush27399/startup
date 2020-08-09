@@ -39,7 +39,10 @@
                                   </li>                                  
                                   <li>
                                      <a href="#" >Help</a>                                    
-                                </li>
+                                    </li>
+                                    <li>
+                                     <a href="tc.php" >Terms  & Conditions</a>
+                                    </li>
                               </ul>
                             </div>
                           </div>  

@@ -409,20 +409,21 @@ if(isset($_POST['changePass']))
                                 <div class="col-sm-2 spa">
                                 <label for="inputEmail4">Gender</label>
                                     <select class="form-control" name="gender" id="gender" disabled>
-                                        <option default>Gender</option>                                    
-                                        <?php
-                                            if($getUserDataRes['gender']=="MALE")
-                                            {
-                                                echo "<option value='MALE' selected>Male</option>";
-                                                echo "<option value='FEMALE'>Female</option>";
-                                            }
+                                                                            
+                                        <?php                                    
+                                            echo "<option default>Gender</option>";
+                                            $msd=$getUserDataRes['gender'];                                        
+                                            
+                                            $ms=array("MALE","FEMALE");
+                                            for($l=0;$l<count($ms);$l++)
+                                            {                                        
+                                                if($msd==$ms[$l])
+                                                    echo "<option value=".$ms[$l]." selected>".$ms[$l]."</option>";
 
-                                            if($getUserDataRes['gender']=="FEMALE")
-                                            {
-                                                echo "<option value='MALE'>Male</option>";
-                                                echo "<option value='FEMALE' selected>Female</option>";
-                                            }                                                
-                                        ?>                                                                                
+                                                else                                        
+                                                    echo "<option value=".$ms[$l].">".$ms[$l]."</option>";
+                                            }                                        
+                                        ?>                                                                                  
                                     </select>
                                 </div>
                                 <div class="col-sm-3 spa">

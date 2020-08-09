@@ -140,7 +140,7 @@
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">                      
-                                    <input type="checkbox" required> I agree to terms and Conditions
+                                    <input type="checkbox" required> I agree to <a href="tc.php">Terms and Conditions</a>
                                 </div>
                             </div>
                             <div class="col-sm-12">
