@@ -46,7 +46,7 @@ values('$userID','$name','$email','$transID','$planID','$planType','$planduratio
 $insertintotrans=mysqli_query($conn,$submitQry);
 if($insertintotrans)
 {    
-    header("location:mships.php");        
+    header("location:https://shreeswayamwar.in/startup/mships.php");        
 }
 
 else

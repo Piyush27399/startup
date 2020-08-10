@@ -26,7 +26,7 @@ try {
         "send_sms" => true, 
         "email" => $email, 
         'allow_repeated_payments' => false, 
-        "redirect_url" => "https://filmfestival.company/users/instamojoThankyou.php"
+        "redirect_url" => "https://shreeswayamwar.in/startup/instamojoThankyou.php"
         //"webhook" => "http://YOUR_WEBSITE.COM/webhook.php" 
         )); 
     //print_r($response);    
