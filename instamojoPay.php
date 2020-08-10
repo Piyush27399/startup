@@ -15,7 +15,7 @@ $email = $_POST["mail"];
 
 
 include 'Instamojo.php';      
-$api = new Instamojo\Instamojo('7a4ca2b260c62d6a2533124e525cf7a4', '2135bdc27b4e363e4435df46c19ef9bf','https://www.instamojo.com/api/1.1/');
+$api = new Instamojo\Instamojo('6fe72150a75ee7d6dce451877dee0179', '50179d2ad22cbe51bf719812164fbb83','https://www.instamojo.com/api/1.1/');
 try {
     $response = $api->paymentRequestCreate(array(
         "purpose" => $product_name,

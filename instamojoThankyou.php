@@ -1,17 +1,18 @@
 <?php
 
-session_start();
-if(empty($_SESSION)){
-header('location: login.php');
-}
+
+require_once("includes/conn.php");
+  session_start();
+  if(empty($_SESSION))
+  {
+    header("location:login.php");
+  }
+
+  $userID=$_SESSION['userID'];
 
 include 'Instamojo.php';
 
-
-
-$con=new mysqli("localhost","mayafilm","abhijay@8055","mayafilm_filmfestival");
-
-$api = new Instamojo\Instamojo('21b710b5bb9c590d4ac743602ffacd0c', '54f09f3870775c56036687e83e5b9718','https://www.instamojo.com/api/1.1/');
+$api = new Instamojo\Instamojo('6fe72150a75ee7d6dce451877dee0179', '50179d2ad22cbe51bf719812164fbb83','https://www.instamojo.com/api/1.1/');
 $payid = $_GET["payment_request_id"];
 try {
 $response = $api->paymentRequestStatus($payid);
@@ -28,26 +29,30 @@ echo "<h4>Payment ID: " . $response['payments'][0]['payment_id'] . "</h4>" ;
 echo "<h4>Payment Name: " . $response['payments'][0]['buyer_name'] . "</h4>" ;
 echo "<h4>Payment Email: " . $response['payments'][0]['buyer_email'] . "</h4>" ;
 
-$submitQry="insert into trans(txnID,name,email,amount,payStatus) values('$transID','$name','$email',$amount,'$payStatus')";
-//$con->query($query);
-$insertintotrans=mysqli_query($con,$submitQry);
+$planID=$_SESSION['buyPlanID'];
+$getPlanDetails="SELECT * FROM plans where planID=".$planID."";
+$getPlanDetailsResult=mysqli_query($conn,$getPlanDetails);
+$getPlanDetailsRes=mysqli_fetch_assoc($getPlanDetailsResult);
+
+$planType=$getPlanDetailsRes['type'];
+$planduration=$getPlanDetailsRes['duration']." days";
+
+$curDate=date("Y-m-d");
+$edate=date('Y-m-d', strtotime($Date. ' + '.$planduration));
+
+$submitQry="insert into trans(userID,name,email,transID,planID,type,duration,amount,sdate,edate,status) 
+values('$userID','$name','$email','$transID','$planID','$planType','$planduration','$amount','$curDate','$edate','$payStatus')";
+
+$insertintotrans=mysqli_query($conn,$submitQry);
 if($insertintotrans)
-{
-    $festName=$_SESSION['subfest_name'];
-    $festemail=$_SESSION['subemail'];
-    $festInsertQuery="INSERT INTO submissions SELECT * FROM tempsub WHERE fest_name='".$festName."' AND email='".$festemail."'";
-    
-    $festInsertQueryResu=mysqli_query($con,$festInsertQuery);
-    if($festInsertQueryResu)
-    {
-        header("location:submissions.php");
-    }
-    else
-    {
-        echo "<script>alert('Error');</script>";
-    }
+{    
+    header("location:mships.php");        
 }
 
+else
+{
+    echo "<script>alert('Something went wrong contact Owner of this site');</script>";
+}
 
 //echo "<pre>";
 //print_r($response);

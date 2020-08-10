@@ -10,6 +10,8 @@
   $userID=$_SESSION['userID'];
   $getPlanID=$_GET['planID'];
 
+  $_SESSION['buyPlanID']=$getPlanID;
+
   $getUserDetails="select fname,lname,email,mno from users where id='".$userID."'";
   $getUserDetailsRes=mysqli_query($conn,$getUserDetails);
   if(mysqli_num_rows($getUserDetailsRes)>0)
