@@ -89,7 +89,7 @@
 
                       <?php
 
-                        $src="buyMem?planID=".$getSel['planID'];
+                        $src="buyMem.php?planID=".$getSel['planID'];
 
                         $dis="";
                         if($isMember==1)
