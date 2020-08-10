@@ -92,7 +92,7 @@
                         <p align="center" style='color:red'>Click Submit to Proceed Payment & buy a Membership
                             Do not Refresh the page while this procedure
                         </p>
-                            <form action = "http://localhost/startup/instamojoPay.php" method="POST">                        
+                            <form action = "https://shreeswayamwar.in/shree/instamojoPay.php" method="POST">                        
                                 <input type="hidden" class="form-control" name="prod" value="<?php echo $planType; ?>"> 
                                     
                                 <input type="hidden" class="form-control" name="amt" value="<?php echo $planamt; ?>"> 

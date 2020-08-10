@@ -164,7 +164,7 @@
                                 <div class="col-sm-12" style='margin-top: 100px;'>
                                     <p align="center">
                                         <img src="images/footerborderup.png" width="450" ><br/>
-                                        <a href="index.php  " target="_blank">
+                                        <a href="index.php" target="_blank">
                                             ShreeSwayamwar.in
                                         </a><br/>
                                         <img src="images/footerborderdown.png" width="300">

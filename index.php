@@ -43,7 +43,7 @@
         <script type="text/javascript">
           function btnClicked()
           {            
-            location.href='https://shreeswayamwar.in/startup/login.php';
+            location.href='https://shreeswayamwar.in/shree/login.php';
           }          
         </script>
 
