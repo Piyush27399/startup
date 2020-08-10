@@ -1,7 +1,7 @@
 <?php
      define('DB_SERVER','localhost');
      define('DB_USER','shreeswa_shreeswa');
-     define('DB_PASS' ,'Databaseforshree@2020');
+     define('DB_PASS' ,'Prasad@95321');
      define('DB_NAME', 'shreeswa_shreeswa');
 
      /*define('DB_SERVER','localhost');
