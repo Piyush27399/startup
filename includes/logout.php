@@ -3,5 +3,5 @@
     require_once("conn.php");
     session_start();
     session_destroy();
-    header("location:https://shreeswayamwar.in/startup/login.php");
+    header("location:https://shreeswayamwar.in/shree/login.php");
 ?>
