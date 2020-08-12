@@ -94,8 +94,6 @@
   </div>
 </div>
 
-
-
           <div style='background-image:url("images/biel-morro-kcKiBcDTJt4-unsplash.jpg");width:100%;height:100%'>                      
             <center>
               <img class="img-fluid" src="images/Jai-Krishni-Pantha-started-by-Sarvadnya-Shri-Chakradhar-Swami-in-1267-Five-incarnations-of-God-Namo-Panch-Krishna-Avatar-DandvatPranam.jpg"
@@ -106,17 +104,17 @@
           </div>          
 
           <div class="heading" id="story">
-              <h1 class="headFont">Wonderful Tribute</h1><br/>
+              <h1 class="headFont">Tribute</h1><br/>
 
           <h5><q>मला चांगले संस्कार आणि आयुष्य दिल्याबद्दल ही वेबसाइट माझ्या आजी आजोबांना समर्पित करत आहे</q>
             <br/>-प्रसाद चोरमारे
           </h5><br/>
               <div class="container" style='margin-top: 30px;'>
               <div class="row">
-                <div class="col-sm-2"></div>                
-                <div class="col-sm-4">                      
+                <div class="col-sm-3"></div>                
+                <div class="col-sm-3">                      
                     <div class="card">
-                      <img class="card-img-top" src="images/dadaji.jpg" width="150" height="350">
+                      <img class="card-img-top" src="images/dadaji.jpg" width="100" height="250">
                       <div class="card-body">
                         <h5 class="card-title">
                           श्री. प्रभाकर कृष्णराव चोरमारे</h5>
@@ -124,9 +122,9 @@
                       </div>
                     </div>                                        
                   </div>  
-                  <div class="col-sm-4">                                          
+                  <div class="col-sm-3">                                          
                     <div class="card">
-                      <img class="card-img-top" src="images/dadiji.jpg" width="150" height="350">                      
+                      <img class="card-img-top" src="images/dadiji.jpg" width="100" height="250">                      
                       <div class="card-body">
                         <h5 class="card-title">स्व. बाळाबाई प्रभाकर चोरमारे</h5>
                         <p class="card-text"></p>                        
