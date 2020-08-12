@@ -35,6 +35,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/index.css">
         <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+        <link rel="stylesheet" href="css/card3.css" />                
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -63,11 +64,13 @@
 
     </head>    
     <body>
+     
+            
+    
+<?php
+  include("includes/outsideNav.php");
+?>
 
-        <?php
-          include("includes/outsideNav.php");
-        ?>
-                
 <!-- Modal -->
 <div class="modal fade" id="agreePop" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -202,7 +205,6 @@
               </div>
               </div>              
             </div>
-
         
             <h1 class="headFont heading" id="contact">Contact Us</h1>
             <div class="container">
@@ -220,7 +222,83 @@
                   </form>
                 </div>
               </div>
-            </div>            
+            </div>         
+          
+       <!--     <div class="container_piyus">
+              <div class="container"> 
+            <div class="row">
+            
+              <div class="col-cm-6">
+              </div>
+              <div class="col-sm-4">
+              
+                  <section class="card">
+                  <div class="card_inner">
+                    <div class="card_inner__circle">
+                      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/rocket.png"/>
+                    </div>
+                    <div class="card_inner__header">
+                      <img src="http://www.pixeden.com/media/k2/galleries/343/002-city-vector-background-town-vol2.jpg"/>
+                    </div>
+                    <div class="card_inner__content">
+                      <div class="title">Standard</div>
+                      <div class="price">Rs.149</div>
+                      <div class="text">
+                          <div id=menuli><h1><ul><li>View Unlimited Profiles</li><br>
+                                            <li>Various Search Filters</li><br>
+                                            <li>Customer Support</li><br>
+                                            <li>Duration : 180 Days</li><br>
+                                        </ul></h1>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="card_inner__cta">
+                      <button>
+                        <span>Buy now</span>
+                      </button>
+                    </div>
+                  </div>
+                </section>
+              </div>
+
+            <div class="col-sm-4">
+            <section class="card">
+          <div class="card_inner">
+            <div class="card_inner__circle">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/paperplane.png"/>
+            </div>
+            <div class="card_inner__header">
+              <img src="http://7428.net/wp-content/uploads/2013/06/Forest-Creek.jpg"/>
+            </div>
+            <div class="card_inner__content">
+              <div class="title">Pro</div>
+              <div class="price">Rs.249</div>
+              <div class="text">
+                  <div id=menuli>
+                      <h1>
+                          <ul>                          
+                              <li>View Unlimited Profiles</li><br>
+                                <li>Various Search Filters</li><br>
+                              <li>Customer Support</li><br>
+                              <li>Duration : 365 Days</li><br>
+                          </ul>
+                      </h1>
+                 </div>
+               </div>
+              </div>
+            </div>
+            <div class="card_inner__cta">
+              <button>
+                <span>Buy now</span>
+              </button>
+            </div>
+          </div>
+ </section>
+            </div>
+            </div>
+          
+          </div></div>-->
+
 
             <h1 class="headFont heading" id="about">About Us</h1>
             <div class="container">
