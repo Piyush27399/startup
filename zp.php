@@ -31,7 +31,8 @@
 		$profession=$_POST['profession'];   	  	
 		$rsurname=$_POST['rsurname'];
 		$fcontact=$_POST['fcontact'];  	  
-	$pass=md5($_POST['newpass']);
+	$pass=$_POST['newpass'];
+	$pass=md5($pass);
 	    
     $registerQuery="INSERT INTO users(fname,lname,email,password,mno,education,profession,height,age,
 										dob,gender,maritalStatus,fatherName,motherName,
@@ -44,20 +45,21 @@
     $checkResult=mysqli_query($conn,$checkQuery);
     if(mysqli_num_rows($checkResult)>0)
     {
-        echo "<script>alert('User Already Registration');</script>";
+        echo "<script>alert('User Already Registered');</script>";
     }        
 
     else
     {		
-        $registerResult=mysqli_query($conn,$registerQuery);
-        if($registerResult)
-        {
+		$registerResult=mysqli_query($conn,$registerQuery);
+		echo $registerQuery;
+		if($registerResult)
+		{
             $_SESSION['username']=$mno;
             include("includes/getUserID.php");						
 
 			// Image Upload after Register
 
-			$name = $_FILES['profileImage']['name'];    
+			$name = $_FILES['profileImage']['name'];
     
 			$tmp = $_FILES['profileImage']['tmp_name'];
 			$path = "images/userImage/";
@@ -80,7 +82,7 @@
 
         }
         else
-            echo "<script>alert('Registration Failed');</script>";
+            echo "<script>alert('Error Register');</script>";
 
     }    
   }

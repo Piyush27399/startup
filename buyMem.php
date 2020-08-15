@@ -21,19 +21,27 @@
     $name=$getD['fname']." ".$getD['lname'];
     $email=$getD['email'];
     $mno=$getD['mno'];
+    
+    $validBtn=0;
 
     if($name!="" && $email!="" && $mno!="")
     {
+        
         $getPlanDetails="SELECT * FROM plans where planID=".$getPlanID."";
         $getPlanDetailsResult=mysqli_query($conn,$getPlanDetails);
         $getPlanDetailsRes=mysqli_fetch_assoc($getPlanDetailsResult);
 
         $planType=$getPlanDetailsRes['type'];
         $planamt=$getPlanDetailsRes['amount'];
+        
+        $validBtn=1;                
                         
     }
     else
+    {
+        $validBtn=0;
         echo "<h4>Please Update Your profile to make this payment <a href='edit_profile.php'> Click here to update profile.</a></h4>";
+    }
 
   }
   else 
@@ -103,7 +111,21 @@
                                     
                                 <input type="hidden" class="form-control" name="mail" value="<?php echo $email; ?>">
                                 <a href="mships.php" class="btn btn-dark" >Cancel</a>
+                                
+                                <?php
+                                
+                                if($validBtn==1)
+                                {
+                                ?>
                                 <input type="submit" name="btninstamojo" id="btninstamojo" class="btn btn-success" />
+                                <?php
+                                }
+                                
+                                else
+                                {
+                                ?>
+                                <input type="submit" name="btninstamojo" id="btninstamojo" class="btn btn-success" disabled/>
+                                <?php }  ?>
                             </form>                          
 
                         </div>                                                    

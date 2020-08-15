@@ -8,12 +8,17 @@
   }
 
   include("includes/checkMem.php");
-  if($isMember!=1)
+
+  
+  $userID=$_GET['userID'];
+  $curUserID=$_SESSION['userID'];
+  if($userID==$curUserID)
+  {}
+  
+  else if($isMember!=1)
       header("location:dashboard.php");
       
-
-  $userID=$_GET['userID'];
-  if($userID=="" || $userID==0)
+  else if($userID=="" || $userID==0)
     header("location:dashboard.php");    
 
   $getUserData="SELECT fname,lname,email,mno,education,profession,height,age,dob,gender,

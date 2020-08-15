@@ -339,8 +339,9 @@ if(isset($_POST['changePass']))
                     <i class="fa fa-cog" aria-hidden="true" style='color:black;'></i>
                         Settings
                     </div>
-                    <div class="card-body">                        
-                        <a href="profile.php?userID=1" target="_blank" class="btn btn-success">View Your Profile</a><br/>
+                    <div class="card-body">          
+                    <?php $goid="profile.php?userID=".$userID; ?>              
+                        <a href='<?php echo $goid; ?>' target="_blank" class="btn btn-success">View Your Profile</a><br/>
                         <br/>
                         <a href="">Change Email / Mobile Number</a><br/>
                         <a href="" data-toggle="modal" data-target="#changePass">Change Password</a><br/>
