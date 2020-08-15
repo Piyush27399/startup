@@ -297,7 +297,7 @@
                 <i class="fa fa-search" aria-hidden="true"></i> Search Filters</button>
             </div>
             <div class="col-sm-2">
-                <a class="btn btn-success">
+                <a class="btn btn-success" href="edit_profile.php" style='color:white'>
                 <i class="fa fa-edit" aria-hidden="true"></i> Edit Profile</a>
             </div>
         </div>
