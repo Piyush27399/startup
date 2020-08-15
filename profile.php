@@ -102,7 +102,7 @@
                         $res=mysqli_fetch_assoc($getUserDataResult);
                         $image="images/download.jpeg";
                         if($res['image']!="")
-                            $image="images/userImages/".$res['image'];
+                            $image="images/userImage/".$res['image'];
                     ?>
                         <p align="center">                        
                             <img src=<?php echo "'".$image."'";?> alt="" class="img-fluid" width="130" height="130"

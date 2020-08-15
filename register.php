@@ -38,8 +38,7 @@
 	       
     $checkQuery="SELECT * FROM users WHERE mno='".$mno."'";    
 	$checkResult=mysqli_query($conn,$checkQuery);
-	echo $checkQuery;
-	echo $registerQuery;
+	
 
     if(mysqli_num_rows($checkResult)>0)
     {
