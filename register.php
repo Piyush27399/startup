@@ -67,7 +67,7 @@
 			if($result)
 			{
 				move_uploaded_file($tmp, $path.$name);
-				header("location:edit_profile.php");
+				header("location:dashboard.php");
 				//echo "<script>window.location.replace('edit_profile.php');</script>";
 			}
 			else
