@@ -230,8 +230,26 @@ function verifyDetails()
 							</select>														
 						</div>
 					</div>
-										
-					<br>
+
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<label class="bmd-label-floating">Date of Birth</label>
+                        <input type="date" class="form-control" name="dob" required>
+						</div>
+						<div class="form-row form-row-1">
+							<select name="gender" id="gender">
+							    <option default>Select Gender</option>
+							    <option value="MALE">Male</option>
+							    <option value="FEMALE">Female</option>
+							    
+							</select>
+							
+							<span class="select-btn">
+							  	<i class="zmdi zmdi-chevron-down"></i>
+							</span>
+						</div>
+						
+					</div>					
 					<div class="form-group">
 						<div class="form-row form-row-1">
 							<label class="bmd-label-floating">Date of Birth</label>

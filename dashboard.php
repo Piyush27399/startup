@@ -80,7 +80,7 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 
-    <style>        
+    <style>       
         select {
             padding: 8px;
             border-radius: 3px;
