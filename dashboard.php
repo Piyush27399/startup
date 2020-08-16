@@ -292,7 +292,7 @@
 
     <div class="container-fluid" style='padding:20px;'>
         <div class="row">
-            <div class="col-sm-8"></div>
+            <div class="col-sm-7"></div>
             <div class="col-sm-2" style='margin:5px;'> 
                 <button class="btn btn-success" data-toggle='modal' data-target="#filters">
                 <i class="fa fa-search" aria-hidden="true"></i> Search Filters</button>
