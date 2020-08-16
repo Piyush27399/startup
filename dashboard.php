@@ -69,6 +69,7 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/pro.css">
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -426,8 +427,54 @@
                             while($searchRes=mysqli_fetch_assoc($searchResults))
                             {
                                                            
-                    ?>                    
+                    ?>     
 
+
+                           
+                <!-- Card -->
+                <div class="col-sm-2 col-lg-2" style='padding: 5px;'>
+                <div class="card" data-state="#about">
+        <div class="card-headerrre">
+          <div class="card-covergfd" style="background-image: url('https://images.unsplash.com/photo-1549068106-b024baf5062d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80')"></div>
+          <?php 
+                $image="images/download.jpeg";
+                if($searchRes['image']!="")
+                    $image="images/userImage/".$searchRes['image'];
+        ?>
+          <img class="card-avatarare" src='<?php echo $image;?>'/>
+          <h1 class="card-fullname"><?php echo $searchRes['fname']." ".$searchRes['lname']; ?></h1>
+          <h2 class="card-jobtitle">FREELANCER</h2>
+        </div>
+        <div class="card-mainss">
+          <div class="card-section is-active" id="about">
+            <div class="card-contentess">
+           <!--   <div class="card-subtitlemmn">ABOUT</div>-->
+              <p class="card-descweb">
+                <div id=menu><ul>
+                <li>Age : <?php echo $searchRes['age']." yrs"; ?></li>
+                <li>Education : <?php echo $searchRes['education']; ?></li>
+                <li>Profession : <?php echo $searchRes['profession']; ?></li>
+                <li>State : <?php echo $searchRes['state']; ?></li>
+              </ul>
+              <?php $link="profile.php?userID=".$searchRes['id']; 
+            
+                if($isMember!=1)
+                    echo "<a type='button' class='contact-meess btn' target='_blank'  data-toggle='modal' style='color:blue;' data-target='#exampleModalCenter'>View Profile</a>";
+                else
+                    echo "<a href='$link' class='contact-meess btn' target='_blank' >View Profile</a>";
+            ?>              
+            </div>
+              </p>
+             
+            </div>
+        
+          </div>
+        </div>
+      </div>
+            </div>
+              <!-- card  -->
+
+                <!-- Card 
                     <div class="col-sm-2 col-lg-2" style='padding: 5px;'>
                                     <div class="card">
                                         <div class="card-body" style='padding: 0%;'>
@@ -462,6 +509,7 @@
                         </div>
                 </div>            
             </div>
+              card  -->
             
                         <?php
 
@@ -469,6 +517,7 @@
                             }
 
                             ?>
+                          
                                
                            <!-- <div class="col-sm-12">
                             <nav aria-label="Page navigation example">
