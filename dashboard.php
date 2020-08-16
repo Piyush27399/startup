@@ -293,11 +293,11 @@
     <div class="container-fluid" style='padding:20px;'>
         <div class="row">
             <div class="col-sm-8"></div>
-            <div class="col-sm-2"> 
+            <div class="col-sm-2" style='margin:5px;'> 
                 <button class="btn btn-success" data-toggle='modal' data-target="#filters">
                 <i class="fa fa-search" aria-hidden="true"></i> Search Filters</button>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-2" style='margin:5px;'>
                 <a class="btn btn-success" href="edit_profile.php" style='color:white'>
                 <i class="fa fa-edit" aria-hidden="true"></i> Edit Profile</a>
             </div>
