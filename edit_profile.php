@@ -23,9 +23,10 @@
     if(isset($_POST['submitEdu']))
   {      
         $education=$_POST['education'];
-        $profession=$_POST['profession'];      
+        $profession=$_POST['profession'];  
+        $income=$_POST['income'];
 
-      $updateQry="UPDATE users SET education='".$education."',profession='".$profession."' WHERE id='".$userID."'";
+      $updateQry="UPDATE users SET education='".$education."',profession='".$profession."',income='".$income."' WHERE id='".$userID."'";
   
     $updateQryRes=mysqli_query($conn,$updateQry);
     if($updateQryRes)
@@ -34,12 +35,31 @@
         echo "<script>alert('Failed');</script>";
 }
 
+if(isset($_POST['submitexp']))
+{      
+      $expage=$_POST['expage'];
+      $expdesc=$_POST['expdesc'];  
+      $expincome=$_POST['expincome'];
+      $expedu=$_POST['expedu'];
+
+    $updateQry="UPDATE users SET expAgeDiff='".$expage."',expDesc='".$expdesc."',expInc='".$expincome."',expEdu='".$expedu."' WHERE id='".$userID."'";
+
+  $updateQryRes=mysqli_query($conn,$updateQry);
+  if($updateQryRes)
+      header('location:edit_profile.php');
+  else
+      echo "<script>alert('Failed');</script>";
+}
+
     if(isset($_POST['submitFamily']))
   {      
         $fatherName=$_POST['fatherName'];
-      $motherName=$_POST['motherName'];      
+      $motherName=$_POST['motherName'];    
+      $mamaSurname=$_POST['mamaSurname'];
+      $mamaAddress=$_POST['mamaAddress'];    
+      $nos=$_POST['nos'];
 
-      $updateQry="UPDATE users SET fatherName='".$fatherName."',motherName='".$motherName."' WHERE id='".$userID."'";
+      $updateQry="UPDATE users SET fatherName='".$fatherName."',motherName='".$motherName."',mamaSurname='".$mamaSurname."',mamaAddress='".$mamaAddress."',totalSiblings='".$nos."' WHERE id='".$userID."'";
   
     $updateQryRes=mysqli_query($conn,$updateQry);
     if($updateQryRes)
@@ -79,11 +99,11 @@ if(isset($_POST['changePass']))
       $gender=$_POST['gender'];
       $height=$_POST['height'];
       $maritalStatus=$_POST['maritalStatus'];
-      $expectations=$_POST['expectations'];
+      $zodiac=$_POST['zodiac'];
       $dob=$_POST['dob'];
 
       $updateQry="UPDATE users SET fname='".$fname."',lname='".$lname."', age='".$age."', gender='".$gender."',
-            height='".$height."', maritalStatus='".$maritalStatus."', expectations='".$expectations."', dob='".$dob."' WHERE id='".$userID."'";
+            height='".$height."', maritalStatus='".$maritalStatus."', horoscope='".$zodiac."', dob='".$dob."' WHERE id='".$userID."'";
   
     $updateQryRes=mysqli_query($conn,$updateQry);
     if($updateQryRes)
@@ -94,12 +114,13 @@ if(isset($_POST['changePass']))
 
     if(isset($_POST['submitContact']))
   {      
-      $address=$_POST['address'];
-      $city=$_POST['city'];
+      $paddress=$_POST['paddress'];      
       $state=$_POST['state'];
       $pincode=$_POST['pincode'];
 
-      $updateQry="UPDATE users SET city='".$city."',address='".$address."', state='".$state."', pincode='".$pincode."' WHERE id='".$userID."'";
+      $caddress=$_POST['caddress'];
+
+      $updateQry="UPDATE users SET address='".$paddress."', state='".$state."', pincode='".$pincode."', lAddress='".$caddress."' WHERE id='".$userID."'";
   
     $updateQryRes=mysqli_query($conn,$updateQry);
     if($updateQryRes)
@@ -199,17 +220,20 @@ if(isset($_POST['changePass']))
                 var forc = document.getElementById("formc");
                 var forf = document.getElementById("formf");
                 var forme = document.getElementById("forme");
+                var formexp = document.getElementById("formexp");                
 
                 var submitp = document.getElementById("submitp");
                 var submitc = document.getElementById("submitc");
                 var submitf = document.getElementById("submitf");
                 var submite = document.getElementById("submite");
+                var submitexp = document.getElementById("submitexp");
 
                 var ms = document.getElementById("maritalStatus");
                 var gender = document.getElementById("gender");
                 var state = document.getElementById("state");
 
                 var elements = form.elements;
+                var elementexp = formexp.elements;
                 var elementsc = formc.elements;
                 var elementse = forme.elements;
                 var elementsf = formf.elements;
@@ -220,6 +244,13 @@ if(isset($_POST['changePass']))
                     }
                     else
                         elements[i].readOnly = true;
+                }
+                for (var i = 0, len = elementexp.length; i < len; ++i) {
+                    if ($(elementexp[i]).prop('readonly')) {
+                        elementexp[i].readOnly = false;
+                    }
+                    else
+                    elementexp[i].readOnly = true;
                 }
 
                 for (var i = 0, len = elementsc.length; i < len; ++i) {
@@ -254,6 +285,7 @@ if(isset($_POST['changePass']))
                         submitf.disabled = true;
                         submitc.disabled = true;
                         submitp.disabled = true;
+                        submitexp.disabled = true;
                     }
                     else{
                         ms.disabled = false;
@@ -263,6 +295,7 @@ if(isset($_POST['changePass']))
                         submitf.disabled = false;
                         submitc.disabled = false;
                         submitp.disabled = false;
+                        submitexp.disabled = false;
                     }                        
             
             }
@@ -452,11 +485,30 @@ if(isset($_POST['changePass']))
                                 <label for="inputEmail4">Date of Birth</label>
                                     <input type="Date" name="dob" value='<?php echo $getUserDataRes['dob']; ?>' class="form-control" readonly>
                                 </div>
+
                                 <div class="col-sm-4 spa">
-                                <label for="inputEmail4">Expectation</label>
-                                    <textarea type="text" name="expectations" rows=3 class="form-control" readonly><?php echo $getUserDataRes['expectations']; ?></textarea>
-                                </div>
-                                <div class="col-sm-3 spa">
+                                    <label for="inputEmail4">Zodiac Sign</label>                                    										                                    
+                                        <select class="form-control" name="zodiac" id="zodiac" disabled>
+                                                                            
+                                            <?php                                    
+                                                echo "<option default>Select Zodiac Sign</option>";
+                                                $zodiac=$getUserDataRes['horoscope'];                                        
+                                                
+                                                $zod=array("Mesha","Vrushabha","Mithuna","Karkat","Simha","Kanya","Dhanu",
+                                            "Kumbha","Meena","Tula","Makar");
+                                                for($l=0;$l<count($zod);$l++)
+                                                {                                        
+                                                    if($zodiac==$zod[$l])
+                                                        echo "<option value=".$zod[$l]." selected>".$zod[$l]."</option>";
+
+                                                    else                                        
+                                                        echo "<option value=".$zod[$l].">".$zod[$l]."</option>";
+                                                }                                        
+                                            ?>                                                                                  
+                                        </select>    
+
+                                </div>                                
+                                <div class="col-sm-12 spa">
                                     <button type="submit" id="submitp" name="submitPersonal" class="btn btn-primary" disabled>Save</button>
                                 </div>
                             </div>                            
@@ -475,15 +527,14 @@ if(isset($_POST['changePass']))
                     <div id="contactInfo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                     <div class="card-body">
                         <form method="POST" id="formc">
-                            <div class="row">                                
+                            <div class="row">              
+                            <div class="col-sm-12 spa">
+                            <h5>Permanent Address</h5>
+                            </div>
                                 <div class="col-sm-3 spa">
                                 <label for="inputEmail4">Address</label>
-                                    <textarea type="text" rows=3 class="form-control" name="address" readonly><?php echo $getUserDataRes['address']; ?></textarea>
-                                </div>
-                                <div class="col-sm-3 spa">
-                                <label for="inputEmail4">City</label>
-                                    <input type="text" class="form-control" name="city" value='<?php echo $getUserDataRes['city']; ?>' readonly>
-                                </div>
+                                    <textarea type="text" rows=3 class="form-control" name="paddress" readonly><?php echo $getUserDataRes['address']; ?></textarea>
+                                </div>                                
 
 
                                 <?php  
@@ -552,7 +603,16 @@ if(isset($_POST['changePass']))
                                 <label for="inputEmail4">Pincode</label>
                                     <input type="number" class="form-control" name="pincode" value='<?php echo $getUserDataRes['pincode']; ?>' min="111111" readonly>
                                 </div>
-                                <div class="col-sm-3 spa">
+
+                                <div class="col-sm-12 spa">
+                                <br/>
+                            <h5>Correspondence Address</h5>
+                            </div>
+                                <div class="col-sm-3 spa">                                
+                                    <textarea type="text" rows=3 class="form-control" name="caddress" readonly><?php echo $getUserDataRes['lAddress']; ?></textarea>
+                                </div>
+
+                                <div class="col-sm-12 spa">
                                     <button type="submit" id="submitc" name="submitContact" class="btn btn-primary" disabled>Save</button>
                                 </div>
                             </div>                            
@@ -580,6 +640,18 @@ if(isset($_POST['changePass']))
                                 <label for="inputEmail4">Mother Name</label>
                                     <input type="text" class="form-control" name="motherName" value='<?php echo $getUserDataRes['motherName']; ?>' readonly>                                
                                 </div>
+                                <div class="col-sm-4 spa">     
+                                <label for="inputEmail4">Mama Surname</label>                               
+                                    <input type="text" class="form-control" name="mamaSurname" value='<?php echo $getUserDataRes['mamaSurname']; ?>' readonly>
+                                </div>
+                                <div class="col-sm-4 spa">     
+                                <label for="inputEmail4">No of Siblings</label>
+                                    <input type="number" class="form-control" name="nos" value='<?php echo $getUserDataRes['totalSiblings']; ?>' readonly>
+                                </div>
+                                <div class="col-sm-4 spa">     
+                                <label for="inputEmail4">Mama Address</label>                               
+                                <textarea type="text" rows=3 class="form-control" name="mamaAddress" readonly><?php echo $getUserDataRes['mamaAddress']; ?></textarea>                                
+                                </div>
                                 
                                 <div class="col-sm-12 spa">                                                                
                                                               
@@ -590,6 +662,7 @@ if(isset($_POST['changePass']))
                     </div>
                     </div>
                 </div>
+
                 <div class="card">
                     <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
@@ -602,7 +675,7 @@ if(isset($_POST['changePass']))
                     <div class="card-body">
                         <form method="POST" id="forme">
                             <div class="row">
-                                <div class="col-sm-4 spa">
+                                <div class="col-sm-3 spa">
                                 <label for="inputEmail4">Education</label>
                                     <input type="text" class="form-control" name="education" value='<?php echo $getUserDataRes['education']; ?>' readonly>
                                 </div>
@@ -610,9 +683,53 @@ if(isset($_POST['changePass']))
                                 <label for="inputEmail4">Profession</label>
                                     <input type="text" class="form-control" name="profession" value='<?php echo $getUserDataRes['profession']; ?>' readonly>
                                 </div>
+
+                                <div class="col-sm-3 spa">
+                                <label for="inputEmail4">Income</label>
+                                <input type="text" name="income" value='<?php echo $getUserDataRes['income']; ?>' class="form-control" readonly>
+                                </div>
                                 
                                 <div class="col-sm-12 spa">
                                     <button type="submit" id="submite" name="submitEdu" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#expInfo" aria-expanded="false" aria-controls="collapseThree">
+                        Expectations
+                        </button>
+                    </h2>
+                    </div>
+                    <div id="expInfo" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <form method="POST" id="formexp">
+                            <div class="row">
+                                <div class="col-sm-4 spa">
+                                <label for="inputEmail4">Age</label>
+                                    <input type="text" class="form-control" name="expage" value='<?php echo $getUserDataRes['expAgeDiff']; ?>' readonly>
+                                </div>
+                                <div class="col-sm-3 spa">
+                                <label for="inputEmail4">Education</label>
+                                    <input type="text" class="form-control" name="expedu" value='<?php echo $getUserDataRes['expEdu']; ?>' readonly>
+                                </div>
+                                <div class="col-sm-3 spa">
+                                <label for="inputEmail4">Income</label>
+                                    <input type="text" class="form-control" name="expincome" value='<?php echo $getUserDataRes['expInc']; ?>' readonly>
+                                </div>
+                                <div class="col-sm-3 spa">
+                                <label for="inputEmail4">Description</label>
+                                <textarea type="text" rows=3 class="form-control" name="expdesc" readonly><?php echo $getUserDataRes['expDesc']; ?></textarea>
+                                
+                                </div>
+                                
+                                <div class="col-sm-12 spa">
+                                    <button type="submit" id="submitexp" name="submitexp" class="btn btn-primary" disabled>Save</button>
                                 </div>
                             </div>
                         </form>

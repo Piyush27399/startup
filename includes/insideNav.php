@@ -17,7 +17,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style='background-color: white;'>          
           <a class="dropdown-item" href="edit_profile.php">
             <i class="fa fa-user-circle" aria-hidden="true" style='color:black;'></i>
-            <font color="#000000">Profile</font>
+            <font color="#000000">Edit Profile</font>
           </a>
           <a class="dropdown-item" href="mships.php">
             <i class="fa fa-dollar" aria-hidden="true" style='color:black;'></i>
