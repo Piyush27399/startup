@@ -9,8 +9,9 @@
 
   $userID=$_SESSION['userID'];
 
-  $getUserData="SELECT fname,lname,email,mno,education,profession,height,age,dob,gender,maritalStatus,
-    fatherName,motherName,address,city,state,pincode,expectations,image
+  $getUserData="SELECT fname,lname,education,profession,height,age,dob,gender,
+  maritalStatus,fatherName,motherName,address,state,pincode,mamaSurname,image,
+  bplace,lAddress,income,horoscope,totalSiblings,mamaAddress,expAgeDiff,expEdu,expInc,expDesc
     FROM users WHERE id='".$userID."'";
     
   $getUserDataResult=mysqli_query($conn,$getUserData);
