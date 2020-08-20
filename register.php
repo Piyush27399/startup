@@ -71,7 +71,9 @@
 		if(mysqli_query($conn,$registerQuery))
 		{
             $_SESSION['username']=$mno;
-            include("includes/getUserID.php");						
+			include("includes/getUserID.php");	
+			
+			$userID=$_SESSION['userID'];
 
 			// Image Upload after Register
 
@@ -79,17 +81,17 @@
 			$tmp = $_FILES['profileImage']['tmp_name'];
             $path = "images/userImage/";
             
-            /*$gname = $_FILES['gid']['name'];    
+            $gname = $_FILES['gid']['name'];    
 			$gtmp = $_FILES['gid']['tmp_name'];
-			$gpath = "images/gid/";*/
+			$gpath = "images/gid/";
                         
-			$query="UPDATE users SET image='".$name."' WHERE id='".$userID."'";
+			$query="UPDATE users SET image='".$name."', govtID='".$gname."' WHERE id='".$userID."'";
 			$result=mysqli_query($conn,$query);
 			
 			if($result)
 			{
                 move_uploaded_file($tmp, $path.$name);
-                //move_uploaded_file($tmp, $path.$gname);
+            	move_uploaded_file($gtmp, $gpath.$gname);
 				header("location:dashboard.php");
 				//echo "<script>window.location.replace('edit_profile.php');</script>";
 			}
@@ -206,7 +208,7 @@ function verifyDetails()
 					<div class="form-group">
 						<div class="form-row">
 							Select Profile Image
-							<input type="file"  id="profileImage" name="profileImage" required>
+							<input type="file"  id="PROFILEIMAGE" name="profileImage" required>
 						</div>
 					</div>
                   
@@ -502,7 +504,7 @@ function verifyDetails()
 					 		<div class="form-group">
 								<div class="form-row">
 									<span class="label other">Upload Verified government ID (Aadhar Card, Voter ID)</span>
-									<input type="file"  id="gid" name="gid" required>
+									<input type="file"  id="GID" name="gid" required>
 									<p style="font-family:georgia,garamond,serif;font-size:16px;color:white;">
                                         Do Not Upload Fake Document, Else your profile will be discarded.
                                     </p>
