@@ -188,6 +188,25 @@ function verifyDetails()
 	}
 
 }
+/*
+function sameAs()
+{
+	var ppin=document.getElementById("ppincode").value;
+	//var pstate=document.getElementById("pstate").value;
+	var pAddress=document.getElementById("pAddress").value;
+
+	var check=document.getElementById("addCheck").value;
+
+	if(check.isChecked())
+	{
+
+	}
+
+	var cpin=document.getElementById("cpin").innerHTML=ppin;
+	var cAddress=document.getElementById("cAddress").innerHTML=pAddress;
+}*/
+
+
 </script>
 
 </head>
@@ -335,13 +354,14 @@ function verifyDetails()
 									</label>
 								</div>
 						</div>
-						</div>
-						-->                        
+						</div>-->
+						              
 						<div class="form-group">
 							<div class="form-row form-row-1">
-								<label class="container">Same as Permanent 
-									<input type="checkbox" id="pcheck">
-									<span class="checkmark"></span>
+								<label class="container">
+								<h5>Correspondance Address</h5>
+									<!--<input type="checkbox" id="addCheck" onchange="sameAs()">
+									<span class="checkmark"></span>-->
 								  </label>
 							</div>
 						</div>
