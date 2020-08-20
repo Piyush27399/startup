@@ -22,9 +22,7 @@
                             </a>
                                 </h5>
                             <p class="footer-text">
-                                Here you can use
-                                rows and columns to organize your footer content. 
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Made with love <i class="fa fa-heart" aria-hidden="true" style='color:red'></i>
                             </p>                        
                         </div>
                         </div>
@@ -53,7 +51,7 @@
                               <h5 class="card-title footer-heading">CONTACT</h5>                              
                               <i class="fa fa-map-marker" aria-hidden="true"> Buldhana, Maharashtra, 443001</i>
                                 <br/><br/>
-                                <i class="fa fa-envelope" aria-hidden="true"> <a href="mailto:">example@example.com</a></i>
+                                <i class="fa fa-envelope" aria-hidden="true"> <a href="mailto:">contact@shreeswayamwar.in</a></i>
                                 <br/><br/>                        
                                 <i class="fa fa-phone" aria-hidden="true"> 
                                 <a href="tel:8788126366">8788126366</a> | 

@@ -21,9 +21,11 @@
   else if($userID=="" || $userID==0)
     header("location:dashboard.php");    
 
-  $getUserData="SELECT fname,lname,email,mno,education,profession,height,age,dob,gender,
-    fatherName,motherName,address,city,state,pincode,expectations,image
+$getUserData="SELECT fname,lname,education,profession,height,age,dob,gender,
+  maritalStatus,fatherName,motherName,address,state,pincode,mamaSurname,image,
+  bplace,lAddress,income,horoscope,totalSiblings,mamaAddress,expAgeDiff,expEdu,expInc,expDesc
     FROM users WHERE id='".$userID."'";
+
   $getUserDataResult=mysqli_query($conn,$getUserData);
   if(!mysqli_num_rows($getUserDataResult)>0)
     echo "<script>alert('Error. Try Again..');</script>";
@@ -128,41 +130,49 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-4" style='margin-top: 10px;'>
-                                    <h6 class="bodyHead">Personal Details</h6>
-                                    <?php echo $res['fname']." ".$res['lname']."<br/>";
-                                        echo $res['age']." yrs<br/>";
-                                        echo $res['height']." ft<br/>";
-                                        echo $res['gender']."<br/>";
-                                        echo "DOB ".$res['dob']."<br/>";
+                                    <h5 class="bodyHead">Personal Details</h5>
+                                    Name: <?php echo $res['fname']." ".$res['lname']."<br/>";
+                                        echo "Age: ".$res['age']." yrs<br/>";
+                                        echo "Height: ".$res['height']." ft<br/>";
+                                        echo "Gender: ".$res['gender']."<br/>";
+                                        echo "Birth Date: ".$res['dob']."<br/>";
                                     ?>
                                 </div>                                
                                 <div class="col-sm-4" style='margin-top: 10px;'>
-                                    <h6 class="bodyHead">Education & Profession</h6>
+                                    <h5 class="bodyHead">Education & Profession</h5>
                                     <?php
-                                        echo $res['education']."<br/>";
-                                        echo $res['profession']."<br/>";                                        
+                                        echo "Education: ".$res['education']."<br/>";
+                                        echo "Profession: ".$res['profession']."<br/>";  
+                                        echo "Income: ".$res['income']."<br/>";                                        
                                     ?>                                    
                                 </div>
                                 <div class="col-sm-4" style='margin-top: 10px;'>
-                                    <h6 class="bodyHead">Family</h6>
+                                    <h5 class="bodyHead">Family</h5>
                                     <?php 
-                                        echo $res['fatherName']."<br/>";
-                                        echo $res['motherName']."<br/>";
+                                        echo "Father: ".$res['fatherName']."<br/>";
+                                        echo "Mother: ".$res['motherName']."<br/>";
+                                        echo "Mama Surname: ".$res['mamaSurname']."<br/>";
+                                        echo "Mama Address: ".$res['mamaAddress']."<br/>";                                                                
+                                        
                                     ?>
                                 </div>
                                 <div class="col-sm-4" style='margin-top: 10px;'>
-                                    <h6 class="bodyHead">Contact Details</h6>
+                                    <h5 class="bodyHead">Contact Details</h5>
                                     <?php echo $res['email']."<br/>";
-                                        echo $res['mno']."<br/>";
-                                        echo $res['address']." ".$res['city']."<br/>";
-                                        echo $res['state']." ".$res['pincode']."<br/>";
+                                        echo "Mobile : ".$res['mno']."<br/><br/>";
+                                        echo "Permanent Address: ".$res['address']." ".$res['state']." ".$res['pincode']."<br/><br/>";
+                                        echo "Local Address: ".$res['lAddress']."<br/>";
+                                        
                                     ?>
                                 </div>
                                 <div class="col-sm-8" style='margin-top: 10px;'>
-                                    <h6 class="bodyHead">Expectations</h6>
+                                    <h5 class="bodyHead">Expectations</h5>
                                     <p align="justify">
                                     <?php
-                                        echo $res['expectations']."<br/>";
+                                        echo "Age Difference: ".$res['expAgeDiff']."<br/>";
+                                        echo "Income: ".$res['expInc']."<br/>";
+                                        echo "Education: ".$res['expEdu']."<br/>";
+                                        echo "Description: ".$res['expDesc']."<br/>";
                                     ?>
                                     </p>
                                 </div>

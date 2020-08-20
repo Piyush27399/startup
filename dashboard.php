@@ -17,6 +17,7 @@
     $dob="";
     $height="";
     $maritalStatus="";
+    $zodiac="";
   
     if(isset($_GET['fname'])) {
         $fname=$_GET['fname'];
@@ -41,6 +42,10 @@
     }
     if(isset($_GET['maritalStatus'])) {
         $maritalStatus=$_GET['maritalStatus'];
+    }
+
+    if(isset($_GET['zodiac'])) {
+        $zodiac=$_GET['zodiac'];
     }
 /*
     $fname=$_GET['fname'];
@@ -251,8 +256,33 @@
                                             <option value="Uttarakhand">Uttarakhand</option>
                                             <option value="West Bengal">West Bengal</option>
                                         </select>                                                                
+                                    </div>                                    
+                                </div>    
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <select class="form-control" name="zodiac" id="zodiac">                                            
+                                            <option default>Select Zodiac Sign</option>
+										<option value="Mesha"> Mesha (Aries)(&#x2648;)</option>
+										<option value="Vrushabha">Vrushabha (Taurus)(&#x2649;)</option>
+										<option value="Mithuna">Mithuna (Gemini)(&#x264A;)</option>
+										<option value="Karkat">Karkat (Cancer)(&#x264B;)</option>
+										<option value="Simha">Simha (Leo)(&#x264C;)</option>
+										<option value="Kanya">Kanya (Virgo)(&#x264D;)</option>
+										<option value="Vrushchika">Vrushchika (Scorpio)(&#x264F;)</option>
+										<option value="Dhanu">Dhanu (Sagittarius)(&#x2650;)</option>
+										<option value="Kumbha">Kumbha (Aquarius)(&#x2652;)</option>
+										<option value="Meena">Meena (Pieces)(&#x2653;)</option>
+										<option value="Tula">Tula (Libra)(&#x2648;)</option>
+										<option value="Makar">Makar (Capricorn)(&#x2651;)</option>
+                                        </select>
                                     </div>
-                                </div>                                                        
+                                </div>    
+                                <!--<div class="col-sm-6">
+                                    <div class="form-group">
+                                        <select class="form-control" name="dob" id="dobList">
+                                        </select>
+                                    </div>
+                                </div>-->
                             </div>                         
 
         </div>
@@ -417,6 +447,18 @@
                             else
                             {
                                 $search.=" WHERE maritalStatus='".$maritalStatus."'";
+                                $isAdded=1;
+                            }
+                        }
+                        if($zodiac!="Select Zodiac Sign" && $zodiac!="")
+                        {
+                            if($isAdded==1)
+                            {
+                                $search.=" AND horoscope='".$zodiac."'";
+                            }              
+                            else
+                            {
+                                $search.=" WHERE horoscope='".$zodiac."'";
                                 $isAdded=1;
                             }
                         }
